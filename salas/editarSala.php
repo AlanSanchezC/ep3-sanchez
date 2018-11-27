@@ -6,21 +6,20 @@ require "cfg/conexion.php";
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
 
-
-    $query="select * from SALA_REMOTA WHERE id_sala_remota=$id";
-    mysql_query($query) or die(mysql_error());
+    $query="select * from SALA_REMOTA WHERE id_sala_remota=" . $id . ";";
+  
     
-     $resultado=mysql_query($query);
-     while ($dato=mysql_fetch_array($resultado)) {
+     $resultado=mysqli_query($conexion, $query);
+     $dato=mysqli_fetch_array($resultado);
+
        $nom = $dato['nombre'];
        $res = $dato['responsable'];
        $tel = $dato['telefono'];
        $mail = $dato["email_responsable"];
        $ip = $dato["ip"];
-       $isdn = $dato["isdn"];
        $id = $dato["id_sala_remota"];
     
-   }
+   
     
 }
 ?>
@@ -81,12 +80,14 @@ if (isset($_GET["id"])) {
     <label for="ejemplo_email_1">IP</label>
     <input name= "ip" type="text" class="form-control" id="juan Perez"
            placeholder="Introduce IP"value= "<?=$ip;?>">
+  <!--
   </div>
     <div class="form-group">
     <label for="ejemplo_email_1">ISDN</label>
     <input name= "isdn" type="text" class="form-control" id="juan Perez"
            placeholder="Introduce ISDN" value= "<?=$isdn;?>">
   </div>
+  -->
   <button type="submit" class="btn btn-success">Enviar</button>
 </form>
 </div>
