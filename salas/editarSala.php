@@ -82,8 +82,8 @@ if (isset($_GET["id"])) {
   </div>
     <div class="form-group">
     <label for="ejemplo_email_1">Servicios</label>
-    <input name= "isdn" type="text" class="form-control" id="juan Perez"
-           placeholder="Introduce ISDN" value= "<?=$servicios;?>">
+    <input name= "Servicios" type="text" class="form-control" id="juan Perez"
+           placeholder="Introduce Servicios" value= "<?=$servicios;?>">
   </div>
  
   <button type="submit" class="btn btn-success">Enviar</button>
