@@ -7,9 +7,9 @@ if (isset($_GET["id"])) {
     $id = $_GET["id"];
 
 
-                $query = 'DELETE FROM SALA_REMOTA WHERE idsala_remota='.$id;
-                mysql_query($query) or die(mysql_error());
+                $query = 'DELETE FROM SALA_REMOTA WHERE id_sala_remota='.$id;
+                mysqli_query($conexion, $query);
 }
 
-   header('Location: index.php');
+   header('Location: ../index.php');
 ?>
