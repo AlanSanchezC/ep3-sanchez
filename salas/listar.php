@@ -32,7 +32,7 @@ require "cfg/conexion.php";
    $resultado=mysqli_query($conexion, $query);
    echo "<div class='container'>";
    echo "<table class='table table-striped'>";
-   echo "<th> Nombre de Sala</th> <th>Respondable de Sala</th> <th>Telefono</th> <th>E-Mail</th> <th>IP</th> <th>Editar</th> <th>Eliminar</th>";
+   echo "<th> Nombre de Sala</th> <th>Respondable de Sala</th> <th>Telefono</th> <th>E-Mail</th> <th>IP</th> <th>Servicios</th> <th>Editar</th> <th>Eliminar</th>";
    while ($dato=mysqli_fetch_array($resultado)) {
    
    echo "<tr>";  
@@ -41,6 +41,7 @@ require "cfg/conexion.php";
    echo "<td>". $dato['telefono']."</td>";
    echo "<td>". $dato ['email_responsable']."</td>";
    echo "<td>". $dato ['ip']."</td>";
+   echo "<td>". $dato ['Servicios']."</td>";
    echo "<td><a href='salas/editarSala.php?id=". $dato ['id_sala_remota']."'>Editar</a></td>";
    echo "<td><a href='salas/eliminarSala.php?id=". $dato ['id_sala_remota']."'>Eliminar</a></td>";
    echo "</tr>";

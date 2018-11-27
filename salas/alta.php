@@ -8,15 +8,16 @@ if (isset($_GET["nom"])) {
     $responsable = $_GET["res"];
     $telefono = $_GET["tel"];
     $email = $_GET["mail"];
+    $servicios = $_GET["Servicios"];
     $ip = $_GET["ip"];
-    echo "hola";
+    
     // Hay campos en blanco
     if($name==NULL|$responsable==NULL|$telefono==NULL|$email==NULL|$ip==NULL) {
         echo "un campo est&aacute; vacio.";
         formRegistro();
     }else{
                 echo $query;
-                $query = 'INSERT INTO SALA_REMOTA (nombre, responsable, telefono, email_responsable, ip) VALUES ('.$name.','.$responsable.','.$telefono.','.$email.','.$ip.')';
+                $query = 'INSERT INTO SALA_REMOTA (nombre, responsable, telefono, email_responsable, ip, Servicios) VALUES ("'.$name.'","'.$responsable.'","'.$telefono.'","'.$email.'","'.$ip.'", "'.$servicios.'")';
                 
                 mysqli_query($conexion, $query);
                 echo 'La sala '.$name.' ha sido registrada de manera satisfactoria.<br/>';

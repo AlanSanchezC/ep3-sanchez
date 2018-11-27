@@ -8,6 +8,7 @@ if (isset($_GET["nom"])) {
     $responsable = $_GET["res"];
     $telefono = $_GET["tel"];
     $email = $_GET["mail"];
+    $servicios = $_GET["Servicios"];
     $ip = $_GET["ip"];
     $id = $_GET["id"];
     
